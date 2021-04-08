@@ -1,7 +1,16 @@
 <div>
-    <div class="filter">
-        <mat-icon>search</mat-icon>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+    <div class="header">
+        <div class="filter">
+            <mat-icon>search</mat-icon>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+        </div>
+
+        <div class="add-button">
+            <button mat-menu-item (click)="openAddDialog()">
+                <mat-icon>add</mat-icon>
+                <span>Añadir Héroe</span>
+            </button>
+        </div>
     </div>
 
     <table mat-table [dataSource]="dataSource">
@@ -23,10 +32,6 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item (click)="openAddDialog()">
-                        <mat-icon>add</mat-icon>
-                        <span>Añadir</span>
-                    </button>
                     <button mat-menu-item (click)="openEditDialog(element)">
                         <mat-icon>edit</mat-icon>
                         <span>Editar</span>

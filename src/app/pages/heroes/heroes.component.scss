@@ -2,6 +2,11 @@ table {
     width: 100%;
 }
 
-.filter {
-    display: inline-flex;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .filter {
+        display: inline-flex;
+    }
 }
