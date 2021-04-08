@@ -33,6 +33,10 @@ export class HeroesService {
     this.heroesData.push(heroe);
   }
 
+  editHeroe(heroe) {
+    this.heroesData[heroe.id] = heroe;
+  }
+
   deleteHeroe(id: string) {
     this.heroesData = this.heroesData.filter(item => item.id !== id);
   }

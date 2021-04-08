@@ -26,7 +26,7 @@ export class AddHeroeModalComponent implements OnInit {
 
   buildForm() {
     this.formHeroe = this.formBuilder.group({
-      id: [{ value: this.data.id, disabled: true }, []],
+      id: [this.data.id, []],
       name: ['', []],
       power: ['', []]
     });
