@@ -12,12 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { AddHeroeModalComponent } from './modals/add-heroe-modal/add-heroe-modal.component';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroeComponent,
-    HeroesComponent
+    HeroesComponent,
+    AddHeroeModalComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +32,15 @@ import { MatMenuModule } from '@angular/material/menu';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
-  providers: [],
+  entryComponents: [
+    AddHeroeModalComponent
+  ],
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

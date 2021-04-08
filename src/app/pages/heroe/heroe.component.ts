@@ -31,9 +31,9 @@ export class HeroeComponent implements OnInit {
 
   buildForm() {
     this.formHeroe = this.formBuilder.group({
-      id: [this.heroe.id, []],
-      name: [this.heroe.name, []],
-	    power: [this.heroe.power, []]
+      id: [{ value: this.heroe.id, disabled: true }, []],
+      name: [{ value: this.heroe.name, disabled: true }, []],
+      power: [{ value: this.heroe.power, disabled: true }, []]
     });
   }
 }

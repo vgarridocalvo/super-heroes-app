@@ -1,8 +1,11 @@
-<h1> <small class="title">Detalle del heroe</small> </h1>
-<hr>
+<div class="header">
+    <h1 mat-dialog-title>Añadir héroe</h1>
+    <button mat-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
 
-<div class="col">
-
+<div mat-dialog-content>
     <form [formGroup]=formHeroe>
 
         <div class="form-group">
@@ -21,5 +24,9 @@
         </div>
 
     </form>
+</div>
 
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="addHeroe()">Añadir</button>
 </div>

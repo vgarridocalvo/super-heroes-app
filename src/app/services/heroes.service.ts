@@ -29,6 +29,10 @@ export class HeroesService {
     return this.heroesData.find(item => item.id === id);
   }
 
+  addHeroe(heroe) {
+    this.heroesData.push(heroe);
+  }
+
   deleteHeroe(id: string) {
     this.heroesData = this.heroesData.filter(item => item.id !== id);
   }
