@@ -61,7 +61,7 @@ export class HeroesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  openEditDialog(element) {
+  openEditDialog(element: HeroeModel) {
     const dialogRef = this.dialog.open(EditHeroeModalComponent, {
       width: '450px',
       data: { heroe: element }
@@ -76,7 +76,7 @@ export class HeroesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  deleteItem(element) {
+  deleteItem(element: HeroeModel) {
     const dialogRef = this.dialog.open(DeleteHeroeModalComponent, {
       width: '450px',
       data: { heroe: element }

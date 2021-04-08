@@ -29,11 +29,11 @@ export class HeroesService {
     return this.heroesData.find(item => item.id === id);
   }
 
-  addHeroe(heroe) {
+  addHeroe(heroe: HeroeModel) {
     this.heroesData.push(heroe);
   }
 
-  editHeroe(heroe) {
+  editHeroe(heroe: HeroeModel) {
     this.heroesData[heroe.id] = heroe;
   }
 
