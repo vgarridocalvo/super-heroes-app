@@ -6,7 +6,6 @@ import { HeroesService } from 'src/app/services/heroes.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddHeroeModalComponent } from 'src/app/modals/add-heroe-modal/add-heroe-modal.component';
 import { DeleteHeroeModalComponent } from 'src/app/modals/delete-heroe-modal/delete-heroe-modal.component';
-import { element } from 'protractor';
 import { EditHeroeModalComponent } from 'src/app/modals/edit-heroe-modal/edit-heroe-modal.component';
 
 @Component({
@@ -34,6 +33,12 @@ export class HeroesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
   getDataSource() {
