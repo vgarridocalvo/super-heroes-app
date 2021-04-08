@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { HeroeModel } from 'src/app/models/heroe.model';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-heroe',
@@ -6,10 +10,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroe.component.scss']
 })
 export class HeroeComponent implements OnInit {
+  heroe: HeroeModel = new HeroeModel();
+  formHeroe: FormGroup;
 
-  constructor() { }
+  constructor(
+    private heroesService: HeroesService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getHeroe(id);
+    this.buildForm();
   }
 
+  getHeroe(id: string) {
+    this.heroe = this.heroesService.getHeroe(id);
+  }
+
+  buildForm() {
+    this.formHeroe = this.formBuilder.group({
+      id: [this.heroe.id, []],
+      name: [this.heroe.name, []],
+	    power: [this.heroe.power, []]
+    });
+  }
 }

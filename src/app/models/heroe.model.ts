@@ -1,5 +1,5 @@
 export class HeroeModel {
-    id: number;
+    id: string;
     name: string;
     power: string;
 }
