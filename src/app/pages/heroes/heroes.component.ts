@@ -11,7 +11,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class HeroesComponent implements OnInit, AfterViewInit {
   heroes: HeroeModel[] = [];
-  displayedColumns: string[] = ['name', 'power'];
+  displayedColumns: string[] = ['name', 'power', 'menu'];
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -33,6 +33,12 @@ export class HeroesComponent implements OnInit, AfterViewInit {
   getDataSource() {
     this.heroes = this.heroesService.getHeroes();
     this.dataSource = new MatTableDataSource<HeroeModel>(this.heroes);
+  }
+
+  deleteItem(id: string) {
+    this.heroesService.deleteHeroe(id);
+    this.getDataSource();
+    this.dataSource.paginator = this.paginator;
   }
 
 }
