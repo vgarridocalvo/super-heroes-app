@@ -1,0 +1,32 @@
+<div class="header">
+    <h1 mat-dialog-title>Editar héroe</h1>
+    <button mat-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div mat-dialog-content>
+    <form [formGroup]=formHeroe>
+
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" class="form-control" placeholder="ID" formControlName="id" name="id" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre del héroe" formControlName="name" name="nombre">
+        </div>
+
+        <div class="form-group">
+            <label>Poder</label>
+            <input type="text" class="form-control" formControlName="power" name="poder" placeholder="Poder del héroe">
+        </div>
+
+    </form>
+</div>
+
+<div mat-dialog-actions class="actions">
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="editHeroe()">Confirmar</button>
+</div>

@@ -22,11 +22,11 @@
                         <mat-icon>add</mat-icon>
                         <span>Añadir</span>
                     </button>
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="openEditDialog(element)">
                         <mat-icon>edit</mat-icon>
                         <span>Editar</span>
                     </button>
-                    <button mat-menu-item (click)="deleteItem(element.id)">
+                    <button mat-menu-item (click)="deleteItem(element)">
                         <mat-icon>delete</mat-icon>
                         <span>Borrar</span>
                     </button>

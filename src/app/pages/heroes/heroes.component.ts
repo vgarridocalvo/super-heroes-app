@@ -5,6 +5,9 @@ import { HeroeModel } from 'src/app/models/heroe.model';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddHeroeModalComponent } from 'src/app/modals/add-heroe-modal/add-heroe-modal.component';
+import { DeleteHeroeModalComponent } from 'src/app/modals/delete-heroe-modal/delete-heroe-modal.component';
+import { element } from 'protractor';
+import { EditHeroeModalComponent } from 'src/app/modals/edit-heroe-modal/edit-heroe-modal.component';
 
 @Component({
   selector: 'app-heroes',
@@ -53,10 +56,34 @@ export class HeroesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  deleteItem(id: string) {
-    this.heroesService.deleteHeroe(id);
-    this.getDataSource();
-    this.dataSource.paginator = this.paginator;
+  openEditDialog(element) {
+    const dialogRef = this.dialog.open(EditHeroeModalComponent, {
+      width: '450px',
+      data: { heroe: element }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.heroesService.editHeroe(result);
+        this.getDataSource();
+        this.dataSource.paginator = this.paginator;
+      }
+    });
+  }
+
+  deleteItem(element) {
+    const dialogRef = this.dialog.open(DeleteHeroeModalComponent, {
+      width: '450px',
+      data: { heroe: element }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.heroesService.deleteHeroe(result);
+        this.getDataSource();
+        this.dataSource.paginator = this.paginator;
+      }
+    });
   }
 
 }

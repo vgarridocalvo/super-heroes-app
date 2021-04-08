@@ -14,13 +14,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { AddHeroeModalComponent } from './modals/add-heroe-modal/add-heroe-modal.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { EditHeroeModalComponent } from './modals/edit-heroe-modal/edit-heroe-modal.component';
+import { DeleteHeroeModalComponent } from './modals/delete-heroe-modal/delete-heroe-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroeComponent,
     HeroesComponent,
-    AddHeroeModalComponent
+    AddHeroeModalComponent,
+    EditHeroeModalComponent,
+    DeleteHeroeModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
     MatDialogModule
   ],
   entryComponents: [
-    AddHeroeModalComponent
+    AddHeroeModalComponent,
+    EditHeroeModalComponent,
+    DeleteHeroeModalComponent
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
