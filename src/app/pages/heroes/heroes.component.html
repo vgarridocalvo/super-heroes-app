@@ -1,4 +1,8 @@
 <div>
+    <div class="title">
+        <h1> <small>Listado de Super Héroes</small> </h1>
+    </div>
+
     <button class="home-button" routerLink="/"><mat-icon>home</mat-icon>Volver</button>
     <div class="header">
         <div class="filter">
@@ -7,7 +11,7 @@
         </div>
 
         <div class="add-button">
-            <button mat-menu-item (click)="openAddDialog()">
+            <button (click)="openAddDialog()">
                 <mat-icon>add</mat-icon>
                 <span>Añadir Héroe</span>
             </button>

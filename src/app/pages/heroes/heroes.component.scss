@@ -1,18 +1,30 @@
-table {
-    width: 100%;
+.title {
+    margin: 20px;
 }
 
 .home-button {
-    margin-top: 20px;
+    margin: 20px;
     display: flex;
     align-items: center;
 }
 
 .header {
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .filter {
         display: inline-flex;
     }
+    .add-button {
+        button {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+table {
+    margin: 20px;
+    width: 100%;
 }

@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
   }
 
   searchByParam() {
-    console.log(this.myGroup.value.value)
     this.router.navigate(['/heroes', this.myGroup.value.value]);
   }
 
