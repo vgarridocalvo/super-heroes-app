@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddHeroeModalComponent } from 'src/app/modals/add-heroe-modal/add-heroe-modal.component';
 import { DeleteHeroeModalComponent } from 'src/app/modals/delete-heroe-modal/delete-heroe-modal.component';
 import { EditHeroeModalComponent } from 'src/app/modals/edit-heroe-modal/edit-heroe-modal.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -22,13 +23,17 @@ export class HeroesComponent implements OnInit, AfterViewInit {
 
   constructor(
     private heroesService: HeroesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private route: ActivatedRoute
   ) {
     this.getDataSource();
   }
 
   ngOnInit(): void {
-
+    const value = this.route.snapshot.paramMap.get('value');
+    if (value) {
+      this.dataSource.filter = value;
+    }
   }
 
   ngAfterViewInit() {

@@ -16,6 +16,7 @@ import { AddHeroeModalComponent } from './modals/add-heroe-modal/add-heroe-modal
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { EditHeroeModalComponent } from './modals/edit-heroe-modal/edit-heroe-modal.component';
 import { DeleteHeroeModalComponent } from './modals/delete-heroe-modal/delete-heroe-modal.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DeleteHeroeModalComponent } from './modals/delete-heroe-modal/delete-he
     HeroesComponent,
     AddHeroeModalComponent,
     EditHeroeModalComponent,
-    DeleteHeroeModalComponent
+    DeleteHeroeModalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

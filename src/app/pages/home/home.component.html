@@ -1,0 +1,22 @@
+<h1>Bienvenido a la App de Super Héroes</h1>
+
+<p>Escoge una acción:</p>
+
+<div class="actions">
+    <div class="all-search">
+        <button routerLink="/heroes">Consultar Super Héroes</button>
+    </div>
+
+    <form [formGroup]="myGroup">
+        <div class="id-search">
+            <input type="text" class="form-control" placeholder="Introduce un ID" formControlName="id" name="id">
+            <button (click)="searchById()">Consultar Super Héroe</button>
+        </div>
+
+        <div class="value-search">
+            <input type="text" class="form-control" placeholder="Introduce un valor" formControlName="value"
+                name="value">
+            <button (click)="searchByParam()">Consultar Super Héroe</button>
+        </div>
+    </form>
+</div>
